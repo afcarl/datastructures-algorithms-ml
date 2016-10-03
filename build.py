@@ -1,7 +1,6 @@
 import os
 import shutil
 
-# Machine learning
 ML = [
     "Linear Regression",
     "Logistic Regression",
@@ -10,10 +9,8 @@ ML = [
     "Naive Bayes",
     "KNN",
     "K-Means",
-    "Random Forest"
-]
+    "Random Forest"]
 
-# Basic data structures and algorithms
 CORE = [
     "AVL Tree",
     "B-Tree",
@@ -68,7 +65,7 @@ def readme():
     for k,v in tags.iteritems():
         txt += '# %s\n' % k
         for item in v:
-            txt += '* [%s][%s]\n' % (item, item)
+            txt += '* [%s](%s)\n' % (item, item)
     with open ('README.md', 'w+') as f:
         f.write(txt)
 
