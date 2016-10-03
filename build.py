@@ -60,16 +60,19 @@ def all():
     return sorted(CORE + ML)
 
 def readme():
+    """ Constructs the README.md index page linking to each topic"""
     tags = { 'Machine Learning': ML, 'Algorithms and Datastructures': CORE }
     txt = '# Regime\nSelf study and programming practice\n'
     for k,v in tags.iteritems():
         txt += '# %s\n' % k
         for item in v:
             txt += '* [%s](%s)\n' % (item, item)
+        txt += "\n"
     with open ('README.md', 'w+') as f:
         f.write(txt)
 
 def make_dirs():
+    """ Build the directories if they don't exist """
     for directory in all():
         if not os.path.exists(directory):
             print("Creating directory %s" % directory)
@@ -78,12 +81,12 @@ def make_dirs():
                 f.write("# %s\n" % directory)
 
 def clean():
+    """ Destructive clean of all code """
     for directory in all():
         if os.path.exists(directory):
             shutil.rmtree(directory)
 
 def main():
-    clean()
     make_dirs()
     readme()
 

@@ -44,6 +44,7 @@ Self study and programming practice
 * [Tree](Tree)
 * [Trie](Trie)
 * [Union-Find](Union-Find)
+
 # Machine Learning
 * [Linear Regression](Linear Regression)
 * [Logistic Regression](Logistic Regression)
@@ -53,3 +54,4 @@ Self study and programming practice
 * [KNN](KNN)
 * [K-Means](K-Means)
 * [Random Forest](Random Forest)
+
