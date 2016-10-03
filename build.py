@@ -1,7 +1,20 @@
 import os
 import shutil
 
-ALL= [
+# Machine learning
+ML = [
+    "Linear Regression",
+    "Logistic Regression",
+    "Decision Tree",
+    "SVM",
+    "Naive Bayes",
+    "KNN",
+    "K-Means",
+    "Random Forest"
+]
+
+# Basic data structures and algorithms
+CORE = [
     "AVL Tree",
     "B-Tree",
     "Binary Search Tree",
@@ -22,9 +35,7 @@ ALL= [
     "Heap",
     "Huffman Coding",
     "Insertion Sort",
-    "K-Means",
     "Kth Largest Element",
-    "Linear Regression",
     "Linear Search",
     "Linked List",
     "Longest Common Subsequence",
@@ -40,7 +51,7 @@ ALL= [
     "Segment Tree",
     "Selection Sort",
     "Shell Sort",
-    "Skip List"
+    "Skip List",
     "Stack",
     "Topological Sort",
     "Treap",
@@ -48,8 +59,11 @@ ALL= [
     "Trie",
     "Union-Find"]
 
+def all():
+    return sorted(CORE + ML)
+
 def make_dirs():
-    for directory in ALL:
+    for directory in all():
         if not os.path.exists(directory):
             print("Creating directory %s" % directory)
             os.makedirs(directory)
@@ -57,7 +71,7 @@ def make_dirs():
                 f.write("# %s\n" % directory)
 
 def clean():
-    for directory in ALL:
+    for directory in all():
         if os.path.exists(directory):
             shutil.rmtree(directory)
 
