@@ -1,5 +1,5 @@
-type 'a binary_tree =
-  | Node of 'a binary_tree * 'a * 'a binary_tree
+type 'a bst =
+  | Node of 'a bst * 'a * 'a bst
   | Leaf
 
 let empty = Leaf
