@@ -19,6 +19,10 @@ let rec insert tree item =
          let right_branch = insert r item in
          Node(l, v, right_branch)
 
+let rec size = function
+  | Leaf -> 0
+  | Node(l, v, r) -> size l + 1 + size r
+
 let rec contains tree item =
   match tree with
   | Leaf -> false
@@ -32,7 +36,7 @@ let rec contains tree item =
 let rec min_tree = function
   | Leaf -> None
   | Node(l, v, r) -> if (is_empty l) then v else min_tree l
-  
+
 let rec tree_map f = function
   | Leaf ->
       Leaf

@@ -19,5 +19,4 @@ let rec size = function
 let rec contains tree value =
   match tree with
   | Leaf -> false
-  | Node(l, v, r) -> if v == value then true
-                                   else contains l value || contains r value
+  | Node(l, v, r) -> v == value || contains l value || contains r value
