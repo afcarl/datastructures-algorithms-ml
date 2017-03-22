@@ -1,3 +1,18 @@
+module type OrderedType =
+  sig
+    type t
+    val compare: t -> t -> int
+  end
+  
+module Make(Ord: OrderedType) = struct
+
+  type key = Ord.t  
+  
+  type 'a t =
+    Empty
+  | Node of {l:'a t; v: key; r:'a t;}
+end
+
 type 'a binary_tree =
   | Node of 'a binary_tree * 'a * 'a binary_tree
   | Leaf
